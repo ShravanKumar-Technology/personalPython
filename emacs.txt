@@ -1,0 +1,48 @@
+C-x 2 --------> split
+C-x b --------> switch to different buffer
+C-x o --------> jump to other buffer.
+M-x shell ----> to open a shell command line.
+M-% aka M-x query-replace
+M-x replace-string
+M-u -----------> make a letter pointed by cursor from beginning of word to UPPERCASE
+M-l ---------> loWer case.
+M-c ---------> maKes a chaRactEr to uPpercase
+C-space to start marking a region. then
+M-x ispell-region -----> check small region for spelling
+M-x ispell-buffer -----> check the full current file.
+
+sudo apt-get install erc
+
+#!/bin/bash -----> used to shell script, it is starting line.
+
+M-x grep --------> can be used to 
+
+S-+     ---------> to create a new directory, here S is shift.
+S-!     ---------> to open a file with program you choose, here S is shift button.
+C-g     ---------> to end any uncompleted command.
+
+.emacs can be opened from home directory.
+
+g        -------> you can refresh the contents of the buffer.
+S-c      -------> we can copy file, and rename it.
+
+i   --------> it can be used to mark any file. in packages not in dred mode.
+d   --------> used to mark a file to be deleted.
+x   --------> to execute your command.
+m and u -------> these are used to mark and unmark files. dried mode.
+S-u -------> to unmark all selected files. here S is shift.
+t  ----> mark and unmark all the files in dried mode.
+*/ ----> to mark all the directories.
+
+R  ----> capital R to rename the file.
+s  ----> to sort the directory. you can use it to repeatedly sort between time and alphabet.
+
+~  ----> used to mark all the backup files for deletion.
+C-x b tab --------> to get the list of all the buffers opened.
+C-x C-b  -------->  to list all buffer in dired style. you can also use
+M-x clean-buffer-list  ----> to clean all the buffers.
+
+
+
+
+

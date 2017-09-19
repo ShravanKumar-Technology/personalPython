@@ -1,0 +1,13 @@
+
+stack = [1,2,3,4,5]
+stack.append(98)
+stack.pop()     --------------> output is 98
+---------------------------------------------------------------------------------
+
+from collections import deque
+
+queue = deque([1,2,4,5,6])
+queue.append(56)
+queue.popleft()  -------------> output is 1
+
+

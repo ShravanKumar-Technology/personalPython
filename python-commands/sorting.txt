@@ -1,0 +1,30 @@
+
+li = [9,4,5,2,5,7,8,1,6,3]
+
+sorted_li = sorted(li)
+print("sorted list is :", sorted_li)
+
+li.sort()
+print('Original Variables:\t',li)
+
+sorted_li = sorted(li, reverse=true)
+li.sort(reverse=true)                                                    # here list is sorted in reverse order.
+
+
+tup = (9, 4, 5, 2, 5, 7, 8, 1, 6, 3)                                           # these are tuples, these have unique values.
+sort_tup = sorted(tup)                                                          # tuples doesnot have sort method on itself, you have to sort it
+print(sort_tup)                                                                        # separatly.
+
+
+student = {'name': 'John', 'age': 25, 'courses': 'Math'}
+
+sort_student = sorted(student)
+print(sort_student)                                                                # dictionary is sorted according to keys.
+
+li = [-9,4,-5,-2,5,-7,8,1,6,3]
+s_li = sorted(li,key=abs)                                                        # key parameter absolute is used here to sort things out.
+print(s_li)                                              # [1, -2, 3, 4, -5, 5, 6, -7, 8, -9]. here in key parameter you can also pass return value of a fuction.
+
+
+from operator import attrgetter                     # here attrgetter fuction can be used to short complex objects.
+

@@ -1,0 +1,57 @@
+import os
+
+print(dir(os))                         #dir() list all the methods and arguments of the given module.
+
+print(os.getcwd())                  # gives current working directory.
+
+---------------------------------------------------------------------------------------------------
+
+os.chdir('/home/jacksparrow/Desktop')                # change in directory.
+print(os.getcwd())
+print(os.listdir())                                                    #lists files in current working directory.
+
+os.mkdir('New_directory')
+os.makedirs('New_directory/another_directory')
+
+os.rmdir('New_directory')
+os.removedirs('New_directory/another_directory')
+
+os.rename('original.txt','new.txt')
+
+print(os.stat('sorting.txt'))                                                                           #prints some info on given file name.
+print(os.stat('sorting.txt').st_mtime)
+
+mod = os.stat('sorting.txt').st_mtime
+print(datetime.fromtimestamp(mod))
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+os.walk("")  ------------------->       this method gives three return values that you can use to print path, directories, filenames.
+
+for dirpath, dirnames, filenames in os.walk('/home/jacksparrow/Desktop/python-scripts/python-commands'):
+
+    print("current path:",dirpath)
+    print("directories name:",dirnames)
+    print("filenames:",filenames)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+print(os.environ.get('HOME'))                                                   #prints home directory
+
+file_path = os.path.join(os.environ.get('HOME'),'newOr_old_file.txt')
+print(file_path)
+
+print(os.path.basename('/tmp/test.txt'))                                                   # prints base or file name
+print(os.path.dirname('/tmp/test.txt'))                                                   #prints directory name
+print(os.path.split('/tmp/test.txt'))                                                   #prints both file name and directory name
+print(os.path.exits('/tmp/test.txt'))                                                   #checks wheather given file name or path exits or not.
+
+print(os.path.isdir('/tmp/test.txt'))                                                   #checks wheather given file name or path is directory or not
+print(os.path.isfile('/tmp/test.txt'))                                                   #checks wheather given file name or path is file or not.
+
+print(os.path.splitext('/tmp/test.txt'))                                                   # separates both the file path and name with extension.
+
+print(dir(os.path))
+

@@ -1,0 +1,209 @@
+
+Reading the Contents of Files
+-----------------------------
+
+
+>>> helloContent = helloFile.read()
+>>> helloContent
+'Hello world!'
+
+
+Writing to Files:
+-----------------
+
+>>> baconFile = open('bacon.txt', 'w')
+>>> baconFile.write('Hello world!\n')
+13
+>>> baconFile.close()
+>>> baconFile = open('bacon.txt', 'a')
+>>> baconFile.write('Bacon is not a vegetable.')
+25
+>>> baconFile.close()
+>>> baconFile = open('bacon.txt')
+>>> content = baconFile.read()
+>>> baconFile.close()
+>>> print(content)
+Hello world!
+Bacon is not a vegetable.
+
+
+
+Saving Variables with the shelve Module:
+---------------------------------------
+
+
+>>> import shelve
+>>> shelfFile = shelve.open('mydata')
+>>> cats = ['Zophie', 'Pooka', 'Simon']
+>>> shelfFile['cats'] = cats
+>>> shelfFile.close()
+
+Your programs can use the shelve module to later reopen and retrieve the data from these shelf files. Shelf values don’t have to be opened in read or write mode—they can do both once opened. Enter the following into the interactive shell:
+
+
+>>> shelfFile = shelve.open('mydata')
+>>> type(shelfFile)
+<class 'shelve.DbfilenameShelf'>
+>>> shelfFile['cats']
+['Zophie', 'Pooka', 'Simon']
+>>> shelfFile.close()
+
+
+Just like dictionaries, shelf values have keys() and values() methods that will return list-like values of the keys and values in the shelf. Since these methods return list-like values instead of true lists, you should pass them to the list() function to get them in list form. Enter the following into the interactive shell:
+
+
+>>> shelfFile = shelve.open('mydata')
+>>> list(shelfFile.keys())
+['cats']
+>>> list(shelfFile.values())
+[['Zophie', 'Pooka', 'Simon']]
+>>> shelfFile.close()
+
+
+Saving Variables with the pprint.pformat() Function
+
+>>> import pprint
+>>> cats = [{'name': 'Zophie', 'desc': 'chubby'}, {'name': 'Pooka', 'desc': 'fluffy'}]
+>>> pprint.pformat(cats)
+"[{'desc': 'chubby', 'name': 'Zophie'}, {'desc': 'fluffy', 'name': 'Pooka'}]"
+>>> fileObj = open('myCats.py', 'w')
+>>> fileObj.write('cats = ' + pprint.pformat(cats) + '\n')
+83
+>>> fileObj.close()
+
+
+>>> import myCats
+>>> myCats.cats
+[{'name': 'Zophie', 'desc': 'chubby'}, {'name': 'Pooka', 'desc': 'fluffy'}]
+>>> myCats.cats[0]
+{'name': 'Zophie', 'desc': 'chubby'}
+>>> myCats.cats[0]['name']
+'Zophie
+
+
+Saving Variables with the pprint.pformat() Function
+
+Say you have a dictionary stored in a variable and you want to save this variable and its contents for future use. Using pprint.pformat() will give you a string that you can write to .py file. This file will be your very own module that you can import whenever you want to use the variable stored in it.
+
+
+>>> import myCats
+>>> myCats.cats
+[{'name': 'Zophie', 'desc': 'chubby'}, {'name': 'Pooka', 'desc': 'fluffy'}]
+>>> myCats.cats[0]
+{'name': 'Zophie', 'desc': 'chubby'}
+>>> myCats.cats[0]['name']
+'Zophie'
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Notes 2 :
+
+f = open('list','r')                          # here new file object is created.
+print(f.name)
+print(f.mode)
+f.close()
+---------------------------
+
+context manager:
+
+with open('list','r') as f:                                                                     #here file is managed, you don't have to close it explicitly
+         pass
+print(f.closed)                                                              #here it checks whether file is closed or not, it diff from f.close()
+print(f.mode)                                                                 # tells whether file is in read or write or append mode.
+-----------------------------
+
+with open('List','r') as f:
+      f_contents = f.read()
+      print(f_contents)
+
+------------------------------
+
+with open('List','r') as f:
+      f_contents = f.readLines()
+      print(f_contents)
+-----------------------------
+
+with open('List', 'r') as f:                                                      # Every time you use readline(), next line in the file is printed.
+    f_contents = f.readline()
+    print(f_contents)
+
+    f_contents = f.readline()
+    print(f_contents)
+
+    f_contents = f.readline()
+    print(f_contents, end=' ')
+----------------------------------------
+
+with open('List,'r'') as f:
+    for line in f:                                                                      # here we print file content line by line.
+        print(line,end=' ')
+
+----------------------------------------
+with open('List','r') as f:
+     f_contents = f.read(100)                                               # it prints first 100 characters of the file.
+     print(f_contents)
+
+
+     f_contents = f.read(100)                                               # print next 100 characters of the file.
+     print(f_contents, end=' ')
+
+---------------------------------------
+with open('List','r') as f:
+       f_contents_size = 100
+       f_contents = f.read(f_contents_size)
+                                                                                          # this program reads 100 character and loops through file.
+       while len(f_contents) > 0:
+             print(f_contents, end=' ')
+             f_contents = f.read(f_contents_size)
+--------------------------------------
+
+print(f.tell)         # tells cursor position on file object f.
+f.seek(0)           # resets the cursor position to 0 or from the begining. you can program it to any position in file.
+
+--------------------------------------
+**************************************************************************************************************
+
+writing on files:
+--------------------
+
+with open('test2.txt','w') as f:                  # new file is created if there is no test2.txt file, because we opened file in 'w' mode
+        f.write('hi iam shravan')
+        f.seek(0)                                          # resets the cursor position to begining of the file
+        f.write('k')
+
+-----------------------------------------------------------
+copy's a file to another:
+-------------------------------
+
+with open('List', 'r') as rf:
+       with open('List_copy','w') as wf:
+                for line in rf:
+                     wf.write(line)
+
+------------------------------
+
+copying image file :    here we have to work on the file in binary mode.
+
+with open('List', 'rb') as rf:
+       with open('List_copy','wb') as wf:
+                for line in rf:
+                     wf.write(line)
+
+
+copy image file in chunk:
+
+with open('ubu.jpg', 'rb') as rf:
+    with open('ubu_copy.jpg', 'wb') as wf:
+        chunk_size = 4096
+        rf_chunk = rf.read(chunk_size)
+        while len(rf_chunk) > 0:
+            wf.write(rf_chunk)
+            rf_chunk = rf.read(chunk_size)
+
+--------------------------------
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+>>> raise Exception('This is the error message.')
+Traceback (most recent call last):
+  File "<pyshell#191>", line 1, in <module>
+    raise Exception('This is the error message.')
+Exception: This is the error message.
+
+
+Getting the Traceback as a String:
+
+>>> import traceback
+>>> try:
+         raise Exception('This is the error message.')
+except:
+         errorFile = open('errorInfo.txt', 'w')
+         errorFile.write(traceback.format_exc())
+         errorFile.close()
+         print('The traceback info was written to errorInfo.txt.')
+
+116
+The traceback info was written to errorInfo.txt.
+
+
+Assertions: see it in book.
+
+
+Logging:
+
+import logging
+logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s
+- %(message)s')
+
+
+logging.debug() function when we want to print log information.
+
+
+
+
+DEBUG              logging.debug()    The lowest level. 
+                                      Used for small details.
+                                      Usually you care about these messages only when diagnosing problems.
+
+
+
+INFO                logging.info()           Used to record information on general events in your program or confirm that things are working at their point in the program.
+
+WARNING            logging.warning()        Used to indicate a potential problem that doesn’t prevent the program from working but might do so in the future.
+
+ERROR               logging.error()         Used to record an error that caused the program to fail to do something.
+
+CRITICAL           logging.critical()       The highest level. Used to indicate a fatal error that has caused or is about to cause the program to stop running entirely.
+
+
+
+
+
+>>> import logging
+>>> logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s -
+%(levelname)s - %(message)s')
+>>> logging.debug('Some debugging details.')
+2015-05-18 19:04:26,901 - DEBUG - Some debugging details.
+>>> logging.info('The logging module is working.')
+2015-05-18 19:04:35,569 - INFO - The logging module is working.
+>>> logging.warning('An error message is about to be logged.')
+2015-05-18 19:04:56,843 - WARNING - An error message is about to be logged.
+>>> logging.error('An error has occurred.')
+2015-05-18 19:05:07,737 - ERROR - An error has occurred.
+>>> logging.critical('The program is unable to recover!')
+2015-05-18 19:05:45,794 - CRITICAL - The program is unable to recover!
+
+
+Disabling Logging:
+
+
+>>> import logging
+>>> logging.basicConfig(level=logging.INFO, format=' %(asctime)s -
+%(levelname)s - %(message)s')
+>>> logging.critical('Critical error! Critical error!')
+2015-05-22 11:10:48,054 - CRITICAL - Critical error! Critical error!
+>>> logging.disable(logging.CRITICAL)
+>>> logging.critical('Critical error! Critical error!')
+>>> logging.error('Error! Error!')
+
+
+
+

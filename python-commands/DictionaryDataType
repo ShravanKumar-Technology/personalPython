@@ -1,0 +1,155 @@
+
+Dictionary:
+---------------
+
+
+myVariable = {}   -------------> myVariable is dictionary data type
+
+myVariable1 = {'Key':'Value'}
+myVariable = {'Key':'Value','Key1':'Value1','Key2':'Value2','Key3':'Value3'}
+
+
+here 'Key' can be string or integer value. no quotes are required for the integer key.
+
+myVariable['Key1'] -----------> 'Value1'
+myVariable['key5'] ------------> error -------> key5 is not there in myVariable dictionary
+
+
+'Key1' in myVariable ----------> true.             /* in operator */
+'Key1' not in myVariable ----------> false.        /* not in operator */
+
+
+myVariable     --------->      {'Key':'Value','Key1':'Value1','Key2':'Value2','Key3':'Value3'}
+
+Dictionaries are unordered.
+
+Dictionaries are mutable data type, variable hold Dictionaries referenceses not Dictionary values.
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+myVariable = {}   -------------> myVariable is dictionary data type
+
+myVariable['jon'] = 25
+myVariable['Daniel'] = 40
+myVariable   --------------------> {'jon':25 , 'Daniel':40}
+
+list(myVariable.values())   -----> [25,40]
+list(myVariable.keys())     -----> ['jon','Daniel']
+
+new_ages = dict{shravan=24,pawan=40,mom=90}
+new_ages  --------------------------->  {'shravan':24,'pawan':40,'mom': 90} --> new way of creating dictionary.
+
+
+------------------------------------------------------------------------------------------------------------------
+methods -> keys(), values(), items() these methods can be used like -----> myVariables.keys(), myVariables.values(), myVariables.items().
+
+myVariable
+{'key3': 'value3', 'key1': 'value1', 'key2': 'value2'}
+>>> list(myVariable.keys())                                         /* here list() method is used on these methods
+['key3', 'key1', 'key2']
+>>> list(myVariable.values())
+['value3', 'value1', 'value2']
+>>> list(myVariable.items())
+[('key3', 'value3'), ('key1', 'value1'), ('key2', 'value2')]
+
+
+>>> myVariable.keys()
+dict_keys(['key3', 'key1', 'key2'])
+
+>>> myVariable.values()                                             /* her list() method is not used
+dict_values(['value3', 'value1', 'value2'])
+
+>>> myVariable.items()
+dict_items([('key3', 'value3'), ('key1', 'value1'), ('key2', 'value2')])
+>>>
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+these methods can be used in for loop.
+
+for k in myVariables.keys():
+          print(k)
+for v in myVariables.values():
+          print(v)
+for k,v in myVariables.items():
+          print(k,v)
+
+for i in myVariables.items():
+          print(i)                      ---------> here i is tuples. tuples are same as list but use parenthsis
+
+'Value3' in myVariable.value() ----------> true.
+
+myVariable.get('key2','0')  ----> here 0 is returned if there is no key2 value in myVariable. default value is 0.
+myVariable.get('key2',' ')  ----> here ' ' is returned if there is no key2 and key2 value in myVariable. default value is ' '.
+
+
+setdefault('key','value') -----> can set a value if it doesn't exist.
+myVariable.setdefault('key','value')
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+the pprint module's pprint() "pretty print" function can display a dictionary value cleanly.
+
+the pformat() function returns a string value of this output.
+
+type()     -------> this fuction gives data type of the fuction.
+type(42)   -------> <class 'int'>
+type(3.14)       ------> <class 'float'>
+
+
+
+program:-
+------------
+
+message = 'it was bright cold day in april.'
+
+count = {}
+
+for character in message.upper():
+    count.setdefault(character,0)                 -----------> here if character value is not there it is set to 0.
+    count[character] = count[character] + 1
+
+print(count)
+---------------------------------------------this program prints characters and number of times it appears in statements.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+al = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+my_dict = {n1: al1 for n1, al1 in zip(nums, al)}                                # dictionary comprahension
+
+print my_dict
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SET :
+
+
+my_set = set()             # a set has all unique values.
+
+my_set = {n for n in nums}              # set comprahensions
+
+
+
+Genarator Expressions:
+------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

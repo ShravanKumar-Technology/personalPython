@@ -1,0 +1,272 @@
+Escape characters:
+-----------------
+
+\' -----> single quote
+\" -----> double quote
+\t -----> tab
+\n -----> NewLine
+\\ -----> new line
+
+r'hello' ----> 'r' here signifies that 'hello' is raw string. it is used when we use too many backslash.
+A raw string completely ignores all escape characters and prints any backslash that appears in the string.
+
+
+
+triple quotes --> """______""" when contents are in multiple lines. these can be used to include backslash, quotes, double quotes every thing in text as it is.
+
+in and not in operators can be used just like they are used in list.
+>>> 'Hello' in 'Hello World'
+True
+>>> 'Hello' in 'Hello'
+True
+>>> 'HELLO' in 'Hello World'
+False
+>>> '' in 'spam'
+True
+>>> 'cats' not in 'cats and dogs'
+False
+
+Indexing and slicing strings:
+
+>>> spam = 'Hello world!'
+>>> spam[0]
+'H'
+>>> spam[4]
+'o'
+>>> spam[-1]
+'!'
+>>> spam[0:5]
+'Hello'
+>>> spam[:5]
+'Hello'
+>>> spam[6:]
+'world!'
+
+
+upper(), lower(), isupper(), and islower() String Methods:
+
+strings are immutable.
+
+>>> spam = 'HelloWorld'
+>>> spam.upper()
+'HELLOWORLD'
+>>> spam
+'HelloWorld'
+
+
+>>> spam = 'Hello world!'
+>>> spam = spam.upper()
+>>> spam
+'HELLO WORLD!'
+>>> spam = spam.lower()
+>>> spam
+'hello world!'
+
+The upper() and lower() methods are helpful if you need to make a case-insensitive comparison.
+
+print('How are you?')
+feeling = input()
+if feeling.lower() == 'great':
+    print('I feel great too.')
+else:
+    print('I hope the rest of your day is good.')
+
+it does not matter whether the user types Great, GREAT, or grEAT, because the string is first converted to lowercase.
+
+------------------------------------------------------------
+
+The isupper() and islower() methods will return a Boolean True value if the string has at least one letter and all the letters are uppercase or lowercase, respectively. Otherwise, the method returns False.
+
+>>> spam = 'Hello world!'
+>>> spam.islower()
+False
+>>> spam.isupper()
+False
+>>> 'HELLO'.isupper()
+True
+>>> 'abc12345'.islower()
+True
+>>> '12345'.islower()     ------> should have atleast one lower case character
+False
+>>> '12345'.isupper()
+False
+
+-------------------------------------------------------------
+
+Since the upper() and lower() string methods themselves return strings, you can call string methods on those returned string values as well.
+
+>>> 'Hello'.upper()
+'HELLO'
+>>> 'Hello'.upper().lower()
+'hello'
+>>> 'Hello'.upper().lower().upper()
+'HELLO'
+>>> 'HELLO'.lower()
+'hello'
+>>> 'HELLO'.lower().islower()
+True
+
+----------------------------------------------------------------
+
+there are several string methods that have names beginning with the word is. These methods return a Boolean value that describes the nature of the string.
+
+isalpha() returns True if the string consists only of letters and is not blank.
+
+isalnum() returns True if the string consists only of letters and numbers and is not blank.
+
+isdecimal() returns True if the string consists only of numeric characters and is not blank.
+
+isspace() returns True if the string consists only of spaces, tabs, and new-lines and is not blank.
+
+istitle() returns True if the string consists only of words that begin with an uppercase letter followed by only lowercase letters.
+
+>>> 'hello'.isalpha()
+True
+>>> 'hello123'.isalpha()
+False
+>>> 'hello123'.isalnum()
+True
+>>> 'hello'.isalnum()
+True
+>>> '123'.isdecimal()
+True
+>>> '    '.isspace()
+True
+>>> 'This Is Title Case'.istitle() ----------> starting letter is capital or not.
+True
+>>> 'This Is Title Case 123'.istitle()
+True
+>>> 'This Is not Title Case'.istitle()
+False
+>>> 'This Is NOT Title Case Either'.istitle()
+False
+
+startswith() and endswith():
+------------------------------------------
+>>> 'Hello world!'.startswith('Hello')
+True
+>>> 'Hello world!'.endswith('world!')
+True
+>>> 'abc123'.startswith('abcdef')
+False
+>>> 'abc123'.endswith('12')
+False
+>>> 'Hello world!'.startswith('Hello world!')
+True
+>>> 'Hello world!'.endswith('Hello world!')
+True
+
+These methods are useful alternatives to the == equals operator if you need to check only whether the first or last part of the string.
+
+
+join() and split() String Methods:
+---------------------------------
+
+
+>>> ', '.join(['cats', 'rats', 'bats'])
+'cats, rats, bats'
+>>> ' '.join(['My', 'name', 'is', 'Simon'])
+'My name is Simon'
+>>> 'ABC'.join(['My', 'name', 'is', 'Simon'])
+'MyABCnameABCisABCSimon'
+
+The split() method does the opposite: It’s called on a string value and returns a list of strings
+
+>>> 'My name is Simon'.split()
+['My', 'name', 'is', 'Simon'] -------> by default white space is removed in the string.
+
+>>> 'MyABCnameABCisABCSimon'.split('ABC')
+['My', 'name', 'is', 'Simon']
+>>> 'My name is Simon'.split('m')
+['My na', 'e is Si', 'on']
+
+
+----------------------example----------------------------------------------
+
+
+>>> spam = '''Dear Alice,
+How have you been? I am fine.
+There is a container in the fridge
+that is labeled "Milk Experiment".
+
+Please do not drink it.
+Sincerely,
+Bob'''
+>>> spam.split('\n')
+['Dear Alice,', 'How have you been? I am fine.', 'There is a container in the
+fridge', 'that is labeled "Milk Experiment".', '', 'Please do not drink it.',
+'Sincerely,', 'Bob']
+
+
+----------------------------------------------------------------------------
+
+rjust(), ljust(), and center():
+
+'Hello'.rjust(10) says that we want to right-justify 'Hello' in a string of total length 10. 'Hello' is five characters, so five spaces will be added to its left, giving us a string of 10 characters with 'Hello' justified right.
+
+
+>>> 'Hello'.rjust(10)
+'     Hello'
+>>> 'Hello'.rjust(20)
+'               Hello'
+>>> 'Hello World'.rjust(20)
+'         Hello World'
+>>> 'Hello'.ljust(10)
+'Hello     '
+
+
+>>> 'Hello'.rjust(20, '*')
+'***************Hello'
+>>> 'Hello'.ljust(20, '-')
+'Hello---------------'
+
+>>> 'Hello'.center(20)
+'       Hello       '
+>>> 'Hello'.center(20, '=')
+'=======Hello========'
+
+
+Removing Whitespace with strip(), rstrip(), and lstrip():
+
+>>> spam = '    Hello World     '
+>>> spam.strip()
+'Hello World'
+>>> spam.lstrip()
+'Hello World      '
+>>> spam.rstrip()
+'    Hello World'
+
+
+>>> spam = 'SpamSpamBaconSpamEggsSpamSpam'
+>>> spam.strip('ampS')
+'BaconSpamEggs'
+Passing strip() the argument 'ampS' will tell it to strip occurences of a, m, p, and capital S from the ends of the string stored in spam. The order of the characters in the string passed to strip() does not matter: strip('ampS') will do the same thing as strip('mapS') or strip('Spam').
+
+
+>>> spam = 'hello there!'
+>>> spam.replace('e','XYZ')
+'hXYZllo thXYZrXYZ!'
+
+
+>>> 'hello' + 'world'
+'helloworld'
+
+conversion specifiers:
+---------------------
+
+
+%s
+
+
+
+
+
+
+
+
+
+
+
+
+
+

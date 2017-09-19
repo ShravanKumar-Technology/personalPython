@@ -1,0 +1,236 @@
+List:
+-----
+
+['__','___','____','____','____','______']            ---------> list
+
+ex:- spam = ['cat','bat','rat','mat'] ---> now 'spam' has list values, we can use it as spam, spam[0],spam[1],spam[2],
+spam[3]------------> you will get respective results.
+
+list inside the list:
+
+
+spam = [['cat','bat']['cat','bat','rat','mat']]
+spam[0],spam[1],spam[0][1],spam[1][3]
+
+
+spam = ['cat','bat','rat','mat']
+spam[-1] --------> mat,
+spam[-2] -------> rat, negative value in the index signifies last and second last value.
+
+
+Slices:
+--------
+
+spam = ['cat','bat','rat','mat']
+spam[1:3] -------------> ['bat','rat']  /* two indexes represent start and end indexes. doesnot include value 3.
+spam[:2]  ------------> ['cat','bat']
+spam[1:]  -------------> ['bat','rat','mat']
+
+
+
+spam = ['cat','bat','rat','mat']
+spam[1:3] = ['super','duper','hai']   ------------>   ['cat','super','duper','hai']
+
+
+
+del spam[2] ----------> deletes a value in spam list which is in index 2. remaining values after index 2 is just appended to other remaining values.
+
+len([1,2,3]) ---> gives number of items in the list.
+
+
++ --> this sign can be used to concatenate two list,
+['1','2','3']+['4','5','6']   --------------> ['1','2','3','4','5','6']
+
+
+[1,2,3]*3 -------> [1,2,3,1,2,3,1,2,3] can replecate the list.
+
+
+many of the things that you can do with strings can be done with list().
+list('hello') -------> ['h','e','l','l','o']
+
+
+
+in and not in  :               (these are operators)
+-------------------
+
+'howdy' in ['hello', 'hi', 'howdy','shravan']             --------> true, howdy is in given list
+
+'howdy' not in ['hello', 'hi', 'howdy','shravan']      ---------> false, howdy is in given list.
+
+----------------------------------------------------------------------------------------------------------
+
+
+range(4) ------------> range(0,4)                /* here "range()" function gives list like values.
+list(range(4)) -----------> [0, 1, 2, 3]
+
+>>spam = list(range(0,100,2))
+>>spam
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98]
+
+-----------------------------------------------------------------------------------------------------------
+supplies = ['shravan','pawan','ramesh','manjula']
+
+for i in range(len(supplies)):                                       /*  range(len(supplies))  */
+	print("index "+ str(i) + " has " +supplies[i])
+
+
+index 0 has shravan
+index 1 has pawan
+index 2 has ramesh
+index 3 has manjula
+
+------------------------------------------------------------------------------------------------------------
+
+Multiple assignment trick:
+-------------------------
+>>> spam = ['hi','hello','dang']
+>>> ram, ravi, krishna = spam
+>>> ram
+'hi'
+>>> ravi
+'hello'
+>>> krishna
+'dang'
+
+>>> hello, hi, fuckoff = 'shravan', 'ram', 'ravi'            /* multiple assignment is happening here */
+>>> hello
+'shravan'
+>>> ram
+'hi'
+>>> fuckoff
+'ravi'
+
+>>> hi = 'ravan'
+>>> hello = 'sita'
+>>> hi, hello = hello, hi           /*swapping is happing here */
+>>> hi
+'sita'
+>>> hello
+'ravan'
+
+------------------------------------------------------------------------------------------------------------
+
++=,-=,*=,/=,%=                            -----> agumented assignment.
+
+------------------------------------------------------------------------------------------------------------
+
+
+Methods:
+-------
+
+spam = ['hi', 'howdy', 'heyas', 'haha', 'super', 'handshek', 'see']
+spam.index('haha')                     -----> 3
+spam.append('bark')                  ----> inserts item bark at the end of the list.
+spam.insert(1,'Pooka')               ----> ['hi', 'Pooka','howdy', 'heyas', 'haha', 'super', 'handshek', 'see']
+
+
+Methods return none value.
+spam = spam.append('hi')         -------------------> this assigns non value to spam variable.
+
+methods have a different datatype. index(),append(),insert() all belong to list() these can't be used for strings.
+
+
+spam.remove('Pooka')             ------>    ['hi', 'howdy', 'heyas', 'haha', 'super', 'handshek', 'see']
+here value is mentioned not the index number.
+
+del spam[1]   ------------> here del command uses index number to delete the number.
+
+
+>>> spam = [2,4,6,8,-4,-5,0,-1,1]
+>>> spam.sort()
+>>> spam
+[-5, -4, -1, 0, 1, 2, 4, 6, 8]
+
+you can also can sort() alphabetically.
+
+
+you can reverse sort() the given list.  ---------------------------->   spam.sort(reverse=True)
+
+
+sort() method uses ASCII values to sort, means capital letters come first.
+
+to sort in alphabatical order spam.sort(key = str.lower)
+
+List is mutable datatype, you are actually storing reference to the list, list are stored only onces , you can create as many reference as possible.
+
+Variable can not contain list, they contain only reference to list.
+
+import copy
+list_reference_name _2 = copy.deepcopy(list_reference_name)
+
+/*creates a separate list, you can modify that list without effecting the original list.(list_reference_name).
+here list_reference_name contents are acctually copied to list_reference_name_2, a brand new list list_reference_name_2 is created.
+
+
+
+
+immmutable values like strings or tuples can not be modified in place. --->
+stringValue = 'shravan'
+stringValue[3]         ----> a
+stringValue[3] = 'R'           ----> ERROR string or tuples are immutable data type.
+
+\ ---> line continuation character, can be used to stretch instruction across multiple lines.
+
+strings have inbuild fuction .format() this can be used to format strings.
+
+ex:-   print("{:.55f}".format(1/10))-->output with 55 presions points.
+
+both '  ' and "  " can be used in python for strings. there is no separate thing for character.
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+small list programs:
+-------------------------
+
+nums = ['1','2','3','4','5','6','7','8','9','10']
+
+my_num = []
+
+for i in nums:
+       my_num.append(i)
+print(my_num)
+
+list comprahension for above program:
+----------------------------------------------------
+
+my_num =[i for i in nums]
+print("my_num")
+
+---------------------------------------------------------------------------------------
+nums = ['1','2','3','4','5','6','7','8','9','10']
+
+my_num = []
+
+for i in nums:
+       my_num.append(i*i)
+print(my_num)
+
+list comprahension for above program:
+----------------------------------------------------
+
+my_num =[i*i for i in nums]
+print(my_num)
+
+-----------------------------------------------------------------------------------------
+
+my_nums = [i for i in nums if i%2 == 0]
+
+-----------------------------------------------------------------------------------------
+
+nums = ['1','2','3','4','5','6','7','8','9','10']
+
+my_num = []
+
+for letter in 'abcd':
+       for n in range(4):
+              my_num((letter, n))
+print(my_num)
+
+list comprehension of this program is:
+--------------------------------------------------
+
+my_num = [(letter,n) for letter in 'abcd' for n in range(4)]
+----------------------------------------------------------------------------------------------------

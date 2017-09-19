@@ -1,0 +1,36 @@
+try:
+  pass
+except Exception:
+        pass
+else:                             #here else clause is used when try block doesn't find any exception in its statement.
+    pass                          # it excuted only after no error is found.
+finally:                       # 'finally' clause is used no matter if any error is found or not.
+    pass                       # it is used to release some resources regardless of there use in program.
+
+
+
+ if f.name == 'currupt_file.txt':
+          raise Exception               -----------> if you uncomment it, it can be used to raise exception manually
+                                                                    it can be used in try block
+
+
+
+------------------------------------------------------------------------------------------
+
+try:
+    f = open('curruptfile.txt')
+    # if f.name == 'currupt_file.txt':
+    #     raise Exception                      -----------> if you uncomment it, it can be used to raise exception manually
+except IOError as e:
+    print('First!')
+except Exception as e:
+    print('Second')
+else:
+    print(f.read())
+    f.close()
+finally:
+    print("Executing Finally...")
+
+print('End of program')
+
+-----------------------------------------------------------------------------------------

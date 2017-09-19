@@ -1,0 +1,219 @@
+Enter sudo apt-get install python3
+
+Enter sudo apt-get install idle3
+
+Enter sudo apt-get install python3-pip
+------------------------------------------------------
+
+idle-python3.5
+
+
+# ---------> comments sign
+
+
+--------------------------------------------------------
+
+
+
+On Linux, the shebang line is
+
+ #! /usr/bin/python3 .       ------------>  The first line of all your Python programs should be a shebang line, which
+
+tells your computer that you want Python to execute this program. The shebang line begins with #!, but the rest depends on your operating system.
+
+------------------------------------------------------------------------------------------------------------------------
+bool, float, int, str.   complex, set, dict, list, tuple, range.
+
+------------------------------------------------------------------------------------------------------------------------
+
+if __name__ == "__main__";   #
+   main()                                 # --------------> calls main fuction in program if any. not used when not necessary.
+
+---------------------------------------------------------------------------------------------------------------------------
+program written in version 2 of python may not run on version 3 of python.
+------------------------------------------------------------------------------------------------------------------------
+
+
+print("")   -------------> prints given string on screen
+input()      -------------> takes input from keyboard,  input("name: ") ------> gives prompt for input.
+len(myName)   ------------> gives info on number of charecter in a given string, here myName consist a string value
+
+str(myName), int(myName),float(myName)   ----------> changes myName variable's data type to there respective data type.
+
+True, False ----> boolean datatype.   ==, !=, > , < ,<=,>= -----> these are boolean comparision operators.
+
+and, or, not     ---------> boolean operators.
+
+if ___: ,      if___: else:,     if __: elif___:elif___:else___:,     -------> conditional operators
+
+bool(0)        -----> false,
+bool(any-number)    -----> true.
+
+while ______ : --------> coditional loops
+
+break    ----------> breaks away from loop
+
+continue   ----------> jumps back to start of the loop, statements after continue are not executed, no semicolon is needed.
+
+
+
+
+for i in range(10) -------> i is not declared before this statement, in this statment value of i start with 0 ends with 9. number 10 is not printed.
+
+range(10) -------> used in for loop, loops till 10. number 10 is not printed.
+range(2,10)------> starts with 2 and loop ends with 10.
+range(0,10,2)-----> starts with 0 ends with 10 but jumps two numbers at a time.
+
+import      ---------> to import standard library
+
+import random     -------> imports random module from standard library
+
+random.randint(0, 10)    ---> calls randint function from random module, by this statment we can print random number from 0 to 10.
+
+import random, sys, os, math -----> can import multiple modules from standard library.
+
+from random import * --------> alternative way of importing modules due to which it is not required to write random in every statment.
+
+import sys
+sys.exit() ----------> exit the runing program, any statement is not excuted after this.
+
+
+import pyperclip
+:
+pyperclip.copy('-----')
+pyperclip.paste()
+
+
+define ____():
+
+                  -----------> defining a fuction
+
+return _____ ------------> returns value to calling fuction
+
+global _____ -------------> makes a variable with local scope to global scope.
+
+
+
+every fuction returns something, if it doesn't return something it defaults to 'None' value.
+
+Keyword Arguments:
+
+end = ' ', sep = 'abc'
+
+Exceptional Handaling:
+--------------------------------
+
+
+try:
+  ------
+except _________:
+
+
+------------------------------------------------------------------------------------
+import sys
+sys.argv[]
+------------------------------------------------------------------------------------
+
+print("s: ",end="")
+------------------------------------------------------------------------------------
+
+x,y = y,x   -------> this is used to swap. these are tuples.
+------------------------------------------------------------------------------------
+
+a,b,c,d = foo()  ---------> here foo() fuction returns multiple values, ex: tuples, list, etc.
+
+-------------------------------------------------------------------------------------------------------
+
+Class:
+
+class Student:
+    def _init_(self, name, dorm):
+        self.name = name
+        self.dorm = dorm
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+
+On Linux, the shebang line is
+
+ #! /usr/bin/python3 .       ------------>  The first line of all your Python programs should be a shebang line, which
+
+tells your computer that you want Python to execute this program. The shebang line begins with #!, but the rest depends on your operating system.
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+LEGB                                                                                       ##Variable Scope
+
+Local, Enclosing, Global, Built-in.
+
+
+global x                                      ## here in this statement x is declared as global. you can do it in local fuction.
+
+
+pass               # statement
+
+/*
+import builtins
+
+print(dir(builtins))
+*/
+
+nonlocal x                 # this statement can be used to effect the global variable x from a fuction.
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
