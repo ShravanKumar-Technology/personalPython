@@ -1,0 +1,30 @@
+* Headline
+
+
+* Installing 
+
+
+ sudo apt-get install org
+
+
+
+* setup .emacs file
+
+
+**add text to file
+**restart emacs
+
+*** the third level 
+
+* to expand your org mode tab key we will use
+
+<TAB>
+
+S-<TAB> ---> S is shift key it will expand and collapse all entires.
+
+* Add text 
+
+Hello world.
+
+You can make *bold* or /italics/ or if _underline_ and =code=, ~verbatu~
+
